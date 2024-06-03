@@ -15,8 +15,11 @@ El protocol definit a `store.proto` proporciona una API de client per interactua
    python3 -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. store.proto
 
 ## Execucio testos
+```bash
 python3 eval/centralized_system_test.py
+```bash
 python3 eval/decentralized_system_test.py
-python eval/eval.py
+```bash
+python3 eval/eval.py
 
 
