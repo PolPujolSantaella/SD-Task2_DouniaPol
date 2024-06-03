@@ -1,0 +1,8 @@
+
+nodes:
+  - ip: localhost
+    port: 32770
+  - ip: localhost
+    port: 32771
+  - ip: localhost
+    port: 32772

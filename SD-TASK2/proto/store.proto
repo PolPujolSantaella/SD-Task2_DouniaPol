@@ -1,0 +1,115 @@
+syntax = "proto3";
+
+package distributedstore;
+
+service KeyValueStore {
+
+  rpc put(PutRequest) returns (PutResponse);
+
+  rpc get(GetRequest) returns (GetResponse);
+
+  rpc slowDown(SlowDownRequest) returns (SlowDownResponse);
+
+  rpc restore(RestoreRequest) returns (RestoreResponse);
+
+  rpc Store (StoreRequest) returns (Empty);
+
+  rpc GetValue (GetRequest) returns (StoreRequest);
+
+  rpc GetValues (Empty) returns (List);
+
+  rpc registerNode (RegisterNodeRequest) returns (RegisterNodeResponse);
+
+  rpc canCommit (Empty) returns (CanCommitResponse);
+
+  rpc doCommit (DoCommitRequest) returns (Empty);
+
+  rpc askVote (AskRequest) returns (AskResponse);
+
+  rpc discover (DiscRequest) returns (DiscResponse);
+
+  rpc addPorts (portRequest) returns (Empty);
+
+}
+
+message AskResponse {
+  int32 weight = 1;
+  string value = 2;
+}
+
+message AskRequest {
+  string key = 1;
+}
+
+message DiscRequest {
+  int32 port = 1;
+}
+
+message DiscResponse {
+  string ports = 1;
+}
+
+message portRequest {
+  string ports = 1;
+}
+message CanCommitResponse {
+  bool success = 1;
+}
+
+message DoCommitRequest {
+  string key = 1;
+  string value = 2;
+}
+
+message RegisterNodeRequest {
+  int32 port = 1;
+}
+
+message RegisterNodeResponse {
+  bool success = 1;
+}
+
+message List {
+  repeated StoreRequest values = 1;
+}
+
+message StoreRequest {
+  string key = 1;
+  string value = 2;
+}
+
+message PutRequest {
+  string key = 1;
+  string value = 2;
+}
+
+message PutResponse {
+  bool success = 1;
+}
+
+message GetRequest {
+  string key = 1;
+}
+
+message GetResponse {
+  string value = 1;
+  bool found = 2;
+}
+
+message SlowDownRequest {
+  int32 seconds = 1;
+}
+
+message SlowDownResponse {
+  bool success = 1;
+}
+
+message RestoreRequest {}
+
+message RestoreResponse {
+  bool success = 1;
+}
+
+message Empty {
+    
+}
