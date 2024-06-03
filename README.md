@@ -17,9 +17,9 @@ El protocol definit a `store.proto` proporciona una API de client per interactua
 ## Execucio testos
 ```bash
 python3 eval/centralized_system_test.py
-```bash
+
 python3 eval/decentralized_system_test.py
-```bash
+
 python3 eval/eval.py
 
 
