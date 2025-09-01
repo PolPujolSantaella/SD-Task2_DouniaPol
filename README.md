@@ -1,5 +1,10 @@
-# SD-Task2_DouniaPol
-# Execució del .proto i Proves del Sistema
+# DistributedKeyValueStore
+
+## Autors
+- Dounia Lakdimi
+- Pol Pujol
+  
+## Execució del .proto i Proves del Sistema
 
 Aquest document proporciona instruccions sobre com executar el protocol definit a `store.proto` i les proves del sistema per a les implementacions centralitzades i descentralitzades.
 
